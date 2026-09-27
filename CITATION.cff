@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+title: "Measuring library performance from Google Maps reviews: analysis code"
+message: "If you use this software, please cite both the software and the paper."
+type: software
+authors:
+  - family-names: Dubey
+    given-names: Vikrant
+    orcid: "https://orcid.org/0009-0006-6127-2044"
+    affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
+  - family-names: Kumari
+    given-names: Purnima
+    orcid: "https://orcid.org/0009-0003-9943-1993"
+    affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
+  - family-names: Mishra
+    given-names: Rajiv Ranjan
+    orcid: "https://orcid.org/0009-0008-5440-2183"
+    affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
+  - family-names: Kumar
+    given-names: Virendra
+    orcid: "https://orcid.org/0009-0002-2693-2861"
+    affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
+  - family-names: Verma
+    given-names: Shweta
+    orcid: "https://orcid.org/0009-0003-5044-4865"
+    affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
+  - family-names: Verma
+    given-names: Shilpi
+    orcid: "https://orcid.org/0000-0003-3638-5304"
+    affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
+version: 1.0.0
+date-released: 2026-09-27
+license: MIT
+repository-code: "https://github.com/ORGANISATION/library-performance-reviews"
+# doi: "10.5281/zenodo.XXXXXXX"      # add the Zenodo concept DOI after the first release
+keywords:
+  - performance measurement
+  - legal deposit libraries
+  - online reviews
+  - sentiment analysis
+  - importance-performance analysis
+abstract: >-
+  Code that turns public Google Maps reviews into library performance indicators: cleaning of
+  platform-generated text, sentiment scoring with validation against a second lexicon and star
+  ratings, sentence-level classification into four service dimensions, and importance-performance
+  analysis using both stated and derived importance.

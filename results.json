@@ -1,0 +1,184 @@
+{
+ "sample": {
+  "n_reviews": 5411,
+  "n_rated": 5410,
+  "n_with_text": 2591,
+  "n_dropped_after_cleaning": 101,
+  "n_dropped_visit_prompt_only": 94,
+  "n_dropped_other": 7,
+  "n_in_scope": 2490,
+  "in_scope_by_library": {
+   "NLI": 986,
+   "CPL": 504,
+   "ASM": 714,
+   "DPL": 286
+  },
+  "very_short_pct": 17.791,
+  "truncated_in_scope_by_library": {
+   "NLI": 1,
+   "CPL": 52,
+   "ASM": 81,
+   "DPL": 27
+  },
+  "visit_prompt_in_scope": 108
+ },
+ "validation": {
+  "lexicon_agreement": {
+   "overall": {
+    "agreement_pct": 84.177,
+    "kappa": 0.5855
+   },
+   "per_library": {
+    "NLI": {
+     "agreement_pct": 83.98,
+     "kappa": 0.588
+    },
+    "CPL": {
+     "agreement_pct": 84.72,
+     "kappa": 0.592
+    },
+    "ASM": {
+     "agreement_pct": 83.61,
+     "kappa": 0.55
+    },
+    "DPL": {
+     "agreement_pct": 85.31,
+     "kappa": 0.644
+    }
+   }
+  },
+  "rating_convergence": {
+   "n": 2052,
+   "C": 0.8996
+  },
+  "spearman": {
+   "textblob_rho": 0.1913,
+   "textblob_p": 5.964313612158859e-22,
+   "vader_rho": 0.2187,
+   "vader_p": 2.408788467937933e-28
+  },
+  "classifier": {
+   "n_train": 1992,
+   "n_test": 498,
+   "accuracy_pct": 86.95,
+   "f1_weighted_pct": 86.45,
+   "f1_macro_pct": 68.28,
+   "f1_negative": 0.412
+  }
+ },
+ "sentiment_by_library_counts": {
+  "NLI": {
+   "positive": 756,
+   "neutral": 178,
+   "negative": 52
+  },
+  "CPL": {
+   "positive": 401,
+   "neutral": 83,
+   "negative": 20
+  },
+  "ASM": {
+   "positive": 563,
+   "neutral": 129,
+   "negative": 22
+  },
+  "DPL": {
+   "positive": 222,
+   "neutral": 48,
+   "negative": 16
+  }
+ },
+ "sentiment_test": {
+  "chi2": 6.781,
+  "dof": 6,
+  "p": 0.3416232387804091,
+  "cramers_v": 0.0369
+ },
+ "rating_tests": {
+  "kruskal_h": 55.176,
+  "kruskal_p": 6.298417913909396e-12,
+  "lowest_rated": "DPL",
+  "mannwhitney_p": {
+   "DPL_vs_NLI": 2.5807133705471468e-12,
+   "DPL_vs_CPL": 5.038761120898441e-08,
+   "DPL_vs_ASM": 4.9988498700217715e-05
+  },
+  "low_star_chi2": 34.955,
+  "low_star_p": 1.2450507058366749e-07
+ },
+ "ipa_cutoffs": {
+  "stated_importance_mean": 25.80905578813794,
+  "nss_mean": 65.37102042192839,
+  "derived_importance_mean": 0.1959920585869473,
+  "n_pairs_stated": 16,
+  "n_pairs_derived": 15
+ },
+ "any_dimension_pct": 67.912,
+ "depository": {
+  "n_mentions": 245,
+  "share_pct": 9.839,
+  "share_by_library_pct": {
+   "NLI": 12.677,
+   "CPL": 11.706,
+   "ASM": 7.423,
+   "DPL": 2.797
+  },
+  "positive_pct_mentioning": 88.98,
+  "positive_pct_other": 76.793,
+  "mean_rating_mentioning": 4.6531,
+  "mean_rating_other": 4.4535,
+  "n_criticised": 13,
+  "chi2": 19.966,
+  "p": 4.616721013587413e-05
+ },
+ "staff_shift_lowest_rated": {
+  "NLI": {
+   "before": {
+    "n": 56,
+    "importance_pct": 7.588,
+    "nss": 55.357
+   },
+   "after": {
+    "n": 31,
+    "importance_pct": 13.778,
+    "nss": 29.032
+   }
+  },
+  "CPL": {
+   "before": {
+    "n": 23,
+    "importance_pct": 6.371,
+    "nss": 78.261
+   },
+   "after": {
+    "n": 15,
+    "importance_pct": 11.029,
+    "nss": 46.667
+   }
+  },
+  "ASM": {
+   "before": {
+    "n": 16,
+    "importance_pct": 3.156,
+    "nss": 31.25
+   },
+   "after": {
+    "n": 8,
+    "importance_pct": 3.96,
+    "nss": 62.5
+   }
+  },
+  "DPL": {
+   "before": {
+    "n": 35,
+    "importance_pct": 14.768,
+    "nss": 37.143
+   },
+   "after": {
+    "n": 5,
+    "importance_pct": 10.204,
+    "nss": 60.0
+   }
+  }
+ }
+}

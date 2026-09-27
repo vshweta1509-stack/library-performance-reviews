@@ -1,0 +1,21 @@
+library,dimension,n_mentions,stated_importance_pct,nss,nss_ci_low,nss_ci_high,nss_vader,derived_importance,n_negative,mean_rating_when_mentioned,small_sample,quadrant_stated,quadrant_derived
+NLI,AS,88,8.925,46.591,30.682,62.5,45.455,-0.331,15,3.545,False,Low priority,Concentrate here
+NLI,IC,372,37.728,68.817,63.165,74.738,61.828,-0.138,23,4.503,False,Keep up the good work,Possible overkill
+NLI,LP,533,54.057,76.173,71.482,80.305,73.546,-0.217,28,4.522,False,Keep up the good work,Keep up the good work
+NLI,DF,125,12.677,76.0,66.4,84.8,64.8,0.001,6,4.672,False,Possible overkill,Possible overkill
+CPL,AS,38,7.54,65.789,44.737,84.211,68.421,-0.293,4,3.895,False,Possible overkill,Keep up the good work
+CPL,IC,219,43.452,76.256,69.406,82.648,60.274,-0.208,8,4.402,False,Keep up the good work,Keep up the good work
+CPL,LP,262,51.984,77.863,71.374,83.969,70.611,-0.348,13,4.45,False,Keep up the good work,Keep up the good work
+CPL,DF,59,11.706,62.712,47.458,76.271,50.847,-0.034,2,4.695,False,Low priority,Low priority
+ASM,AS,24,3.361,41.667,8.333,70.833,25.0,-0.235,4,3.833,True,Low priority,Concentrate here
+ASM,IC,108,15.126,76.852,67.593,86.111,75.926,-0.049,4,4.556,False,Possible overkill,Possible overkill
+ASM,LP,426,59.664,81.455,76.995,85.681,77.465,-0.126,12,4.528,False,Keep up the good work,Possible overkill
+ASM,DF,53,7.423,66.038,49.057,81.132,77.358,-0.072,4,4.66,False,Possible overkill,Possible overkill
+DPL,AS,40,13.986,40.0,12.5,65.0,40.0,-0.44,10,3.85,False,Low priority,Concentrate here
+DPL,IC,84,29.371,72.619,60.714,84.524,47.619,-0.234,4,4.214,False,Keep up the good work,Keep up the good work
+DPL,LP,152,53.147,79.605,71.711,86.842,68.421,-0.215,5,4.263,False,Keep up the good work,Keep up the good work
+DPL,DF,8,2.797,37.5,-12.5,75.0,-25.0,,1,4.0,True,Low priority,not computable
+ALL,AS,190,7.631,48.421,37.368,60.0,46.316,-0.332,33,3.716,False,,
+ALL,IC,783,31.446,72.414,68.455,75.99,61.814,-0.148,39,4.451,False,,
+ALL,LP,1373,55.141,78.514,75.89,81.136,73.634,-0.221,58,4.481,False,,
+ALL,DF,245,9.839,69.388,62.449,76.327,61.224,-0.035,13,4.653,False,,

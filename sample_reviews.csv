@@ -1,0 +1,201 @@
+review_id,library,rating,review_text,date_relative,date_absolute,review_text_translated,original_language,source
+sample_0000,National Library,5,Superb,7 years ago,,,,synthetic
+sample_0001,Connemara Public Library,4,"A wonderful reading hall, very quiet and clean.",7 years ago,,,,synthetic
+sample_0002,"The Asiatic Society, Mumbai",3,"National Library, Kolkata.",1 years ago,,,,synthetic
+sample_0003,Delhi Public Library,5,The rare books and manuscripts here are a treasure.,2 years ago,,,,synthetic
+sample_0004,National Library,5,The rare books and manuscripts here are a treasure.,4 years ago,,,,synthetic
+sample_0005,Connemara Public Library,2,"Very poor maintenance, broken chairs everywhere.",4 years ago,,,,synthetic
+sample_0006,"The Asiatic Society, Mumbai",4,"Great place to study, comfortable seating and good lighting.",1 years ago,,,,synthetic
+sample_0007,Delhi Public Library,4,"A wonderful reading hall, very quiet and clean.",4 years ago,,,,synthetic
+sample_0008,National Library,5,Visited on Weekend Wait time 10-30 min,2 years ago,,,,synthetic
+sample_0009,Connemara Public Library,5,The rare books and manuscripts here are a treasure.,1 years ago,,,,synthetic
+sample_0010,"The Asiatic Society, Mumbai",5,Ok,a year ago,,,,synthetic
+sample_0011,Delhi Public Library,5,Beautiful heritage building with a peaceful garden.,4 years ago,,,,synthetic
+sample_0012,National Library,3,"National Library, Kolkata.",7 years ago,,,,synthetic
+sample_0013,Connemara Public Library,5,Ok,3 years ago,,,,synthetic
+sample_0014,"The Asiatic Society, Mumbai",5,"A wonderful reading hall, very quiet and clean.",4 years ago,,,,synthetic
+sample_0015,Delhi Public Library,5,Beautiful heritage building with a peaceful garden.,5 years ago,,,,synthetic
+sample_0016,National Library,4,Excellent collection of books and newspapers.,a year ago,,,,synthetic
+sample_0017,Connemara Public Library,5,Beautiful heritage building with a peaceful garden.,3 years ago,,,,synthetic
+sample_0018,"The Asiatic Society, Mumbai",5,Superb,7 years ago,,,,synthetic
+sample_0019,Delhi Public Library,5,The staff were helpful and polite throughout my visit.,a year ago,,,,synthetic
+sample_0020,National Library,5,Excellent collection of books and newspapers.,1 years ago,,,,synthetic
+sample_0021,Connemara Public Library,5,Beautiful heritage building with a peaceful garden.,6 years ago,,,,synthetic
+sample_0022,"The Asiatic Society, Mumbai",5,"Great place to study, comfortable seating and good lighting.",4 years ago,,,,synthetic
+sample_0023,Delhi Public Library,5,Ok,4 years ago,,,,synthetic
+sample_0024,National Library,4,Weekday Wait time No wait Reservation recommended No,4 years ago,,,,synthetic
+sample_0025,Connemara Public Library,3,Library building.,5 years ago,,,,synthetic
+sample_0026,"The Asiatic Society, Mumbai",5,The archives are well preserved and useful for research.,5 years ago,,,,synthetic
+sample_0027,Delhi Public Library,3,"National Library, Kolkata.",6 years ago,,,,synthetic
+sample_0028,National Library,5,The rare books and manuscripts here are a treasure. Translated by Google ・ See original (Hindi),6 years ago,,,,synthetic
+sample_0029,Connemara Public Library,4,"Great place to study, comfortable seating and good lighting.",3 years ago,,,,synthetic
+sample_0030,"The Asiatic Society, Mumbai",5,Ok,1 years ago,,,,synthetic
+sample_0031,Delhi Public Library,3,Open on weekdays.,1 years ago,,,,synthetic
+sample_0032,National Library,5,Superb,7 years ago,,,,synthetic
+sample_0033,Connemara Public Library,2,Membership process is slow and the catalogue is out of date.,7 years ago,,,,synthetic
+sample_0034,"The Asiatic Society, Mumbai",4,Weekday Wait time No wait Reservation recommended No,5 years ago,,,,synthetic
+sample_0035,Delhi Public Library,5,"Great place to study, comfortable seating and good lighting.",3 years ago,,,,synthetic
+sample_0036,National Library,5,The archives are well preserved and useful for research.,7 years ago,,,,synthetic
+sample_0037,Connemara Public Library,1,Membership process is slow and the catalogue is out of date.,a year ago,,,,synthetic
+sample_0038,"The Asiatic Society, Mumbai",4,"A wonderful reading hall, very quiet and clean.",2 years ago,,,,synthetic
+sample_0039,Delhi Public Library,5,Ok,a year ago,,,,synthetic
+sample_0040,National Library,5,The staff were helpful and polite throughout my visit. … More,a year ago,,,,synthetic
+sample_0041,Connemara Public Library,5,The archives are well preserved and useful for research.,4 years ago,,,,synthetic
+sample_0042,"The Asiatic Society, Mumbai",2,Membership process is slow and the catalogue is out of date.,7 years ago,,,,synthetic
+sample_0043,Delhi Public Library,5,The archives are well preserved and useful for research.,7 years ago,,,,synthetic
+sample_0044,National Library,5,The staff were helpful and polite throughout my visit.,5 years ago,,,,synthetic
+sample_0045,Connemara Public Library,2,Toilets were dirty and the reading room was noisy.,5 years ago,,,,synthetic
+sample_0046,"The Asiatic Society, Mumbai",5,Ok,7 years ago,,,,synthetic
+sample_0047,Delhi Public Library,4,"Great place to study, comfortable seating and good lighting.",3 years ago,,,,synthetic
+sample_0048,National Library,5,Weekday Wait time No wait Reservation recommended No,6 years ago,,,,synthetic
+sample_0049,Connemara Public Library,5,Ok,3 years ago,,,,synthetic
+sample_0050,"The Asiatic Society, Mumbai",5,Good place,2 years ago,,,,synthetic
+sample_0051,Delhi Public Library,5,The staff were helpful and polite throughout my visit.,1 years ago,,,,synthetic
+sample_0052,National Library,5,The staff were helpful and polite throughout my visit.,3 years ago,,,,synthetic
+sample_0053,Connemara Public Library,2,"Very poor maintenance, broken chairs everywhere.",7 years ago,,,,synthetic
+sample_0054,"The Asiatic Society, Mumbai",2,"Very poor maintenance, broken chairs everywhere.",7 years ago,,,,synthetic
+sample_0055,Delhi Public Library,4,Weekday Wait time No wait Reservation recommended No Translated by Google ・ See original (Hindi),3 years ago,,,,synthetic
+sample_0056,National Library,5,"A wonderful reading hall, very quiet and clean.",a year ago,,,,synthetic
+sample_0057,Connemara Public Library,5,Nice,1 years ago,,,,synthetic
+sample_0058,"The Asiatic Society, Mumbai",5,"A wonderful reading hall, very quiet and clean. Translated by Google ・ See original (Hindi)",3 years ago,,,,synthetic
+sample_0059,Delhi Public Library,5,Weekday Wait time No wait Reservation recommended No,4 years ago,,,,synthetic
+sample_0060,National Library,5,Nice,4 years ago,,,,synthetic
+sample_0061,Connemara Public Library,5,Good place,1 years ago,,,,synthetic
+sample_0062,"The Asiatic Society, Mumbai",5,The archives are well preserved and useful for research. … More,6 years ago,,,,synthetic
+sample_0063,Delhi Public Library,4,"Great place to study, comfortable seating and good lighting.",2 years ago,,,,synthetic
+sample_0064,National Library,1,Membership process is slow and the catalogue is out of date.,2 years ago,,,,synthetic
+sample_0065,Connemara Public Library,1,Toilets were dirty and the reading room was noisy.,6 years ago,,,,synthetic
+sample_0066,"The Asiatic Society, Mumbai",5,The archives are well preserved and useful for research.,4 years ago,,,,synthetic
+sample_0067,Delhi Public Library,5,Ok,1 years ago,,,,synthetic
+sample_0068,National Library,5,Ok,6 years ago,,,,synthetic
+sample_0069,Connemara Public Library,5,"A wonderful reading hall, very quiet and clean.",3 years ago,,,,synthetic
+sample_0070,"The Asiatic Society, Mumbai",5,The archives are well preserved and useful for research.,1 years ago,,,,synthetic
+sample_0071,Delhi Public Library,5,The staff were helpful and polite throughout my visit.,7 years ago,,,,synthetic
+sample_0072,National Library,5,Excellent collection of books and newspapers.,3 years ago,,,,synthetic
+sample_0073,Connemara Public Library,5,Beautiful heritage building with a peaceful garden.,a year ago,,,,synthetic
+sample_0074,"The Asiatic Society, Mumbai",3,Open on weekdays.,2 years ago,,,,synthetic
+sample_0075,Delhi Public Library,4,Excellent collection of books and newspapers.,a year ago,,,,synthetic
+sample_0076,National Library,5,"Great place to study, comfortable seating and good lighting.",2 years ago,,,,synthetic
+sample_0077,Connemara Public Library,5,Ok,a year ago,,,,synthetic
+sample_0078,"The Asiatic Society, Mumbai",2,The staff were rude and unhelpful when I asked for a book.,a year ago,,,,synthetic
+sample_0079,Delhi Public Library,4,Beautiful heritage building with a peaceful garden.,5 years ago,,,,synthetic
+sample_0080,National Library,5,The staff were helpful and polite throughout my visit.,6 years ago,,,,synthetic
+sample_0081,Connemara Public Library,5,"A wonderful reading hall, very quiet and clean.",6 years ago,,,,synthetic
+sample_0082,"The Asiatic Society, Mumbai",1,Toilets were dirty and the reading room was noisy.,1 years ago,,,,synthetic
+sample_0083,Delhi Public Library,2,Membership process is slow and the catalogue is out of date.,2 years ago,,,,synthetic
+sample_0084,National Library,4,Excellent collection of books and newspapers.,4 years ago,,,,synthetic
+sample_0085,Connemara Public Library,4,The staff were helpful and polite throughout my visit.,a year ago,,,,synthetic
+sample_0086,"The Asiatic Society, Mumbai",3,Library building.,7 years ago,,,,synthetic
+sample_0087,Delhi Public Library,1,The staff were rude and unhelpful when I asked for a book.,5 years ago,,,,synthetic
+sample_0088,National Library,5,Beautiful heritage building with a peaceful garden. … More,7 years ago,,,,synthetic
+sample_0089,Connemara Public Library,1,Membership process is slow and the catalogue is out of date.,a year ago,,,,synthetic
+sample_0090,"The Asiatic Society, Mumbai",2,The staff were rude and unhelpful when I asked for a book.,6 years ago,,,,synthetic
+sample_0091,Delhi Public Library,5,The staff were helpful and polite throughout my visit.,3 years ago,,,,synthetic
+sample_0092,National Library,3,"National Library, Kolkata.",1 years ago,,,,synthetic
+sample_0093,Connemara Public Library,4,Excellent collection of books and newspapers.,5 years ago,,,,synthetic
+sample_0094,"The Asiatic Society, Mumbai",3,"National Library, Kolkata.",7 years ago,,,,synthetic
+sample_0095,Delhi Public Library,5,"A wonderful reading hall, very quiet and clean.",a year ago,,,,synthetic
+sample_0096,National Library,2,The staff were rude and unhelpful when I asked for a book.,6 years ago,,,,synthetic
+sample_0097,Connemara Public Library,4,The rare books and manuscripts here are a treasure.,1 years ago,,,,synthetic
+sample_0098,"The Asiatic Society, Mumbai",5,"A wonderful reading hall, very quiet and clean.",4 years ago,,,,synthetic
+sample_0099,Delhi Public Library,1,"Very poor maintenance, broken chairs everywhere.",6 years ago,,,,synthetic
+sample_0100,National Library,1,The staff were rude and unhelpful when I asked for a book.,1 years ago,,,,synthetic
+sample_0101,Connemara Public Library,4,"A wonderful reading hall, very quiet and clean.",3 years ago,,,,synthetic
+sample_0102,"The Asiatic Society, Mumbai",5,"Great place to study, comfortable seating and good lighting.",1 years ago,,,,synthetic
+sample_0103,Delhi Public Library,3,"National Library, Kolkata.",7 years ago,,,,synthetic
+sample_0104,National Library,4,"Great place to study, comfortable seating and good lighting.",3 years ago,,,,synthetic
+sample_0105,Connemara Public Library,5,"A wonderful reading hall, very quiet and clean.",1 years ago,,,,synthetic
+sample_0106,"The Asiatic Society, Mumbai",3,Open on weekdays.,3 years ago,,,,synthetic
+sample_0107,Delhi Public Library,5,Ok,2 years ago,,,,synthetic
+sample_0108,National Library,5,"Great place to study, comfortable seating and good lighting.",3 years ago,,,,synthetic
+sample_0109,Connemara Public Library,5,The rare books and manuscripts here are a treasure.,6 years ago,,,,synthetic
+sample_0110,"The Asiatic Society, Mumbai",4,The staff were helpful and polite throughout my visit.,4 years ago,,,,synthetic
+sample_0111,Delhi Public Library,4,Visited on Weekend Wait time 10-30 min,a year ago,,,,synthetic
+sample_0112,National Library,5,"Great place to study, comfortable seating and good lighting.",4 years ago,,,,synthetic
+sample_0113,Connemara Public Library,5,The archives are well preserved and useful for research.,2 years ago,,,,synthetic
+sample_0114,"The Asiatic Society, Mumbai",4,The rare books and manuscripts here are a treasure.,6 years ago,,,,synthetic
+sample_0115,Delhi Public Library,2,"Very poor maintenance, broken chairs everywhere.",6 years ago,,,,synthetic
+sample_0116,National Library,2,Toilets were dirty and the reading room was noisy.,7 years ago,,,,synthetic
+sample_0117,Connemara Public Library,4,"Great place to study, comfortable seating and good lighting.",a year ago,,,,synthetic
+sample_0118,"The Asiatic Society, Mumbai",5,Excellent collection of books and newspapers.,7 years ago,,,,synthetic
+sample_0119,Delhi Public Library,5,Weekday Wait time No wait Reservation recommended No,a year ago,,,,synthetic
+sample_0120,National Library,5,The staff were helpful and polite throughout my visit.,3 years ago,,,,synthetic
+sample_0121,Connemara Public Library,5,"Great place to study, comfortable seating and good lighting.",6 years ago,,,,synthetic
+sample_0122,"The Asiatic Society, Mumbai",5,Ok,7 years ago,,,,synthetic
+sample_0123,Delhi Public Library,5,"A wonderful reading hall, very quiet and clean.",5 years ago,,,,synthetic
+sample_0124,National Library,5,Good place,1 years ago,,,,synthetic
+sample_0125,Connemara Public Library,1,Membership process is slow and the catalogue is out of date.,1 years ago,,,,synthetic
+sample_0126,"The Asiatic Society, Mumbai",5,Beautiful heritage building with a peaceful garden.,3 years ago,,,,synthetic
+sample_0127,Delhi Public Library,2,Toilets were dirty and the reading room was noisy.,4 years ago,,,,synthetic
+sample_0128,National Library,5,The archives are well preserved and useful for research.,1 years ago,,,,synthetic
+sample_0129,Connemara Public Library,5,The archives are well preserved and useful for research.,3 years ago,,,,synthetic
+sample_0130,"The Asiatic Society, Mumbai",5,Ok,1 years ago,,,,synthetic
+sample_0131,Delhi Public Library,4,"A wonderful reading hall, very quiet and clean.",4 years ago,,,,synthetic
+sample_0132,National Library,5,The staff were helpful and polite throughout my visit.,6 years ago,,,,synthetic
+sample_0133,Connemara Public Library,5,Good place,6 years ago,,,,synthetic
+sample_0134,"The Asiatic Society, Mumbai",5,Nice,6 years ago,,,,synthetic
+sample_0135,Delhi Public Library,5,Good place,3 years ago,,,,synthetic
+sample_0136,National Library,5,The staff were helpful and polite throughout my visit.,3 years ago,,,,synthetic
+sample_0137,Connemara Public Library,2,Toilets were dirty and the reading room was noisy.,4 years ago,,,,synthetic
+sample_0138,"The Asiatic Society, Mumbai",3,Library building.,3 years ago,,,,synthetic
+sample_0139,Delhi Public Library,1,"Very poor maintenance, broken chairs everywhere.",7 years ago,,,,synthetic
+sample_0140,National Library,5,"A wonderful reading hall, very quiet and clean.",6 years ago,,,,synthetic
+sample_0141,Connemara Public Library,5,Ok,5 years ago,,,,synthetic
+sample_0142,"The Asiatic Society, Mumbai",5,Good place,3 years ago,,,,synthetic
+sample_0143,Delhi Public Library,4,Beautiful heritage building with a peaceful garden.,4 years ago,,,,synthetic
+sample_0144,National Library,4,The archives are well preserved and useful for research.,3 years ago,,,,synthetic
+sample_0145,Connemara Public Library,5,Ok,7 years ago,,,,synthetic
+sample_0146,"The Asiatic Society, Mumbai",4,Excellent collection of books and newspapers.,2 years ago,,,,synthetic
+sample_0147,Delhi Public Library,5,Good place,a year ago,,,,synthetic
+sample_0148,National Library,5,The archives are well preserved and useful for research.,3 years ago,,,,synthetic
+sample_0149,Connemara Public Library,5,The staff were helpful and polite throughout my visit.,a year ago,,,,synthetic
+sample_0150,"The Asiatic Society, Mumbai",2,Toilets were dirty and the reading room was noisy.,3 years ago,,,,synthetic
+sample_0151,Delhi Public Library,4,Excellent collection of books and newspapers.,4 years ago,,,,synthetic
+sample_0152,National Library,2,Membership process is slow and the catalogue is out of date.,1 years ago,,,,synthetic
+sample_0153,Connemara Public Library,1,Toilets were dirty and the reading room was noisy.,a year ago,,,,synthetic
+sample_0154,"The Asiatic Society, Mumbai",5,Beautiful heritage building with a peaceful garden.,5 years ago,,,,synthetic
+sample_0155,Delhi Public Library,5,Ok,2 years ago,,,,synthetic
+sample_0156,National Library,5,The archives are well preserved and useful for research.,1 years ago,,,,synthetic
+sample_0157,Connemara Public Library,5,The archives are well preserved and useful for research.,2 years ago,,,,synthetic
+sample_0158,"The Asiatic Society, Mumbai",5,Beautiful heritage building with a peaceful garden.,3 years ago,,,,synthetic
+sample_0159,Delhi Public Library,4,Beautiful heritage building with a peaceful garden.,a year ago,,,,synthetic
+sample_0160,National Library,1,Toilets were dirty and the reading room was noisy.,2 years ago,,,,synthetic
+sample_0161,Connemara Public Library,5,Superb,3 years ago,,,,synthetic
+sample_0162,"The Asiatic Society, Mumbai",4,"Great place to study, comfortable seating and good lighting.",2 years ago,,,,synthetic
+sample_0163,Delhi Public Library,4,"A wonderful reading hall, very quiet and clean.",a year ago,,,,synthetic
+sample_0164,National Library,5,Beautiful heritage building with a peaceful garden.,a year ago,,,,synthetic
+sample_0165,Connemara Public Library,5,The archives are well preserved and useful for research. Translated by Google ・ See original (Hindi),1 years ago,,,,synthetic
+sample_0166,"The Asiatic Society, Mumbai",5,The staff were helpful and polite throughout my visit. Translated by Google ・ See original (Hindi),3 years ago,,,,synthetic
+sample_0167,Delhi Public Library,4,The staff were helpful and polite throughout my visit.,6 years ago,,,,synthetic
+sample_0168,National Library,5,"Great place to study, comfortable seating and good lighting.",4 years ago,,,,synthetic
+sample_0169,Connemara Public Library,5,The rare books and manuscripts here are a treasure.,4 years ago,,,,synthetic
+sample_0170,"The Asiatic Society, Mumbai",3,Library building.,2 years ago,,,,synthetic
+sample_0171,Delhi Public Library,5,Nice,2 years ago,,,,synthetic
+sample_0172,National Library,4,"Great place to study, comfortable seating and good lighting.",7 years ago,,,,synthetic
+sample_0173,Connemara Public Library,4,The staff were helpful and polite throughout my visit. Translated by Google ・ See original (Hindi),6 years ago,,,,synthetic
+sample_0174,"The Asiatic Society, Mumbai",5,Visited on Weekend Wait time 10-30 min,7 years ago,,,,synthetic
+sample_0175,Delhi Public Library,5,Ok,5 years ago,,,,synthetic
+sample_0176,National Library,5,The archives are well preserved and useful for research. … More,4 years ago,,,,synthetic
+sample_0177,Connemara Public Library,4,The staff were helpful and polite throughout my visit.,2 years ago,,,,synthetic
+sample_0178,"The Asiatic Society, Mumbai",5,Beautiful heritage building with a peaceful garden.,6 years ago,,,,synthetic
+sample_0179,Delhi Public Library,4,The rare books and manuscripts here are a treasure.,4 years ago,,,,synthetic
+sample_0180,National Library,5,The staff were helpful and polite throughout my visit.,3 years ago,,,,synthetic
+sample_0181,Connemara Public Library,5,Excellent collection of books and newspapers.,3 years ago,,,,synthetic
+sample_0182,"The Asiatic Society, Mumbai",5,"Great place to study, comfortable seating and good lighting.",1 years ago,,,,synthetic
+sample_0183,Delhi Public Library,4,"A wonderful reading hall, very quiet and clean.",1 years ago,,,,synthetic
+sample_0184,National Library,4,Beautiful heritage building with a peaceful garden.,2 years ago,,,,synthetic
+sample_0185,Connemara Public Library,5,"Great place to study, comfortable seating and good lighting.",2 years ago,,,,synthetic
+sample_0186,"The Asiatic Society, Mumbai",5,"Great place to study, comfortable seating and good lighting. Translated by Google ・ See original (Hindi)",4 years ago,,,,synthetic
+sample_0187,Delhi Public Library,5,Nice,6 years ago,,,,synthetic
+sample_0188,National Library,5,"Great place to study, comfortable seating and good lighting.",7 years ago,,,,synthetic
+sample_0189,Connemara Public Library,5,Good place,5 years ago,,,,synthetic
+sample_0190,"The Asiatic Society, Mumbai",5,The archives are well preserved and useful for research.,6 years ago,,,,synthetic
+sample_0191,Delhi Public Library,1,The staff were rude and unhelpful when I asked for a book.,a year ago,,,,synthetic
+sample_0192,National Library,4,Beautiful heritage building with a peaceful garden.,1 years ago,,,,synthetic
+sample_0193,Connemara Public Library,1,The staff were rude and unhelpful when I asked for a book.,3 years ago,,,,synthetic
+sample_0194,"The Asiatic Society, Mumbai",4,The staff were helpful and polite throughout my visit.,6 years ago,,,,synthetic
+sample_0195,Delhi Public Library,4,Beautiful heritage building with a peaceful garden.,6 years ago,,,,synthetic
+sample_0196,National Library,4,The staff were helpful and polite throughout my visit.,a year ago,,,,synthetic
+sample_0197,Connemara Public Library,4,The rare books and manuscripts here are a treasure.,7 years ago,,,,synthetic
+sample_0198,"The Asiatic Society, Mumbai",4,The archives are well preserved and useful for research.,4 years ago,,,,synthetic
+sample_0199,Delhi Public Library,4,Excellent collection of books and newspapers.,6 years ago,,,,synthetic
