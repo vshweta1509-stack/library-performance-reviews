@@ -1,0 +1,107 @@
+{
+ "sentiment": {
+  "n_sampled": 256,
+  "n_in_scope": 250,
+  "gold_counts": {
+   "positive": 211,
+   "neutral": 29,
+   "negative": 10
+  },
+  "inter_coder": {
+   "n": 250,
+   "agreement_pct": 82.4,
+   "kappa": 0.4041
+  },
+  "textblob": {
+   "n": 250,
+   "accuracy_pct": 82.8,
+   "kappa": 0.4317,
+   "f1_macro": 0.6662,
+   "f1_by_class": {
+    "positive": 0.9029,
+    "neutral": 0.4,
+    "negative": 0.6957
+   },
+   "negative_found": 8
+  },
+  "vader": {
+   "n": 250,
+   "accuracy_pct": 82.4,
+   "kappa": 0.4884,
+   "f1_macro": 0.6527,
+   "f1_by_class": {
+    "positive": 0.9045,
+    "neutral": 0.4935,
+    "negative": 0.56
+   },
+   "negative_found": 7
+  },
+  "classifier": {
+   "n": 250,
+   "accuracy_pct": 79.6,
+   "kappa": 0.307,
+   "f1_macro": 0.5501,
+   "f1_by_class": {
+    "positive": 0.8841,
+    "neutral": 0.3662,
+    "negative": 0.4
+   },
+   "negative_found": 3,
+   "n_train": 2091
+  }
+ },
+ "aspects": {
+  "n_sampled": 205,
+  "n_in_scope": 200,
+  "dimensions": {
+   "AS": {
+    "human_n": 32,
+    "dictionary_n": 38,
+    "both_n": 31,
+    "agreement_pct": 96.0,
+    "kappa": 0.8617,
+    "precision": 0.8158,
+    "recall": 0.9688,
+    "f1": 0.8857,
+    "tone_agree_n": 21
+   },
+   "IC": {
+    "human_n": 44,
+    "dictionary_n": 70,
+    "both_n": 32,
+    "agreement_pct": 75.0,
+    "kappa": 0.399,
+    "precision": 0.4571,
+    "recall": 0.7273,
+    "f1": 0.5614,
+    "tone_agree_n": 24
+   },
+   "LP": {
+    "human_n": 145,
+    "dictionary_n": 117,
+    "both_n": 99,
+    "agreement_pct": 68.0,
+    "kappa": 0.307,
+    "precision": 0.8462,
+    "recall": 0.6828,
+    "f1": 0.7557,
+    "tone_agree_n": 79
+   },
+   "DF": {
+    "human_n": 64,
+    "dictionary_n": 30,
+    "both_n": 27,
+    "agreement_pct": 80.0,
+    "kappa": 0.4652,
+    "precision": 0.9,
+    "recall": 0.4219,
+    "f1": 0.5745,
+    "tone_agree_n": 18
+   }
+  },
+  "tone_agree_pct_range": [
+   66.7,
+   79.8
+  ]
+ }
+}

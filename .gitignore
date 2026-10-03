@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+outputs/
+outputs_demo/
+*.xlsx
+!data/*.xlsx

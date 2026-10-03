@@ -1,5 +1,5 @@
 dimension,n_praised,n_criticised,mean_rating_praised,mean_rating_criticised,gap_stars
 AS,125,33,4.192,1.697,2.495
 IC,606,39,4.5198,3.3333,1.1865
-LP,1136,58,4.5669,3.0862,1.4807
+LP,1133,58,4.5666,3.0862,1.4804
 DF,183,13,4.7104,4.0,0.7104

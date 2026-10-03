@@ -14,18 +14,22 @@ import pandas as pd
 
 # Google's structured "visit information" prompts, captured by scrapers as if they were review text.
 VISIT_PROMPT_PATTERNS = [
-    r"Visited on\s+(Weekday|Weekend)s?",
-    r"\b(Weekday|Weekend)s?\s*…?",
+    r"Visited on\s+(Weekday|Weekend|Public holiday)s?",
+    r"\b(Weekday|Weekend|Public holiday)s?\s*…?",
     r"Wait time\s*(No wait|Up to \d+ min|\d+\s*[–-]\s*\d+\s*min|\d+ min\+?|Over an hour|\d+\+? ?hours?)?",
-    r"Reservation recommended\s*(Yes|No|Not sure)?",
+    r"Reservation recommended\s*(Not sure|Yes|No)?",
     r"Recommended for\s*\w+",
 ]
 # Google's translation notices.
 TRANSLATION_PATTERNS = [
-    r"Translated by Google\s*・?\s*See original\s*\([^)]*\)(\s*\d{1,4})?\s*$",
+    r"Translated by Google\s*・?\s*See original\s*\([^)]*\)(\s*\d{1,4})?(\s*\d{1,2}:\d{2})*\s*$",
     r"\(Translated by Google\)",
     r"\(Original\).*$",
 ]
+# The reviewer's profile summary ("655 reviews · 8,811 photos") occasionally leaks into the text.
+REVIEWER_STATS_PATTERN = r"^\s*\d[\d,]*\s+reviews?\s*·\s*[\d,]+\s+photos?\s*"
+# Google's "Edited N units ago" notice shown above reviews the author has edited.
+EDITED_NOTICE_PATTERN = r"^\s*Edited\s+(an?|\d+)\s+(minute|hour|day|week|month|year)s?\s+ago\b\s*"
 # A relative date occasionally leaks into the start of the text block.
 LEAKED_DATE_PATTERN = r"^\s*(an?|\d+)\s+(minute|hour|day|week|month|year)s?\s+ago\s*(NEW)?\s*"
 TRUNCATION_MARKER = r"…\s*More"          # marks a review Google displayed collapsed
@@ -48,6 +52,7 @@ class CleanedText:
     truncated: bool = False
     translated: bool = False
     leaked_date: bool = False
+    edited_notice: bool = False
 
     def flags(self) -> dict:
         return {
@@ -55,6 +60,7 @@ class CleanedText:
             "flag_truncated": int(self.truncated),
             "flag_translated": int(self.translated),
             "flag_leaked_date": int(self.leaked_date),
+            "flag_edited_notice": int(self.edited_notice),
         }
 
 
@@ -64,6 +70,12 @@ def clean_text(raw: object) -> CleanedText:
         return CleanedText("")
     result = CleanedText(raw)
     text = raw
+
+    text = re.sub(REVIEWER_STATS_PATTERN, "", text, flags=re.I)
+
+    if re.search(EDITED_NOTICE_PATTERN, text, flags=re.I):
+        result.edited_notice = True
+        text = re.sub(EDITED_NOTICE_PATTERN, "", text, flags=re.I)
 
     if re.search(LEAKED_DATE_PATTERN, text):
         result.leaked_date = True
@@ -148,7 +160,7 @@ def prepare_reviews(
 
     cleaned = data["source_text"].map(clean_text)
     data["text"] = [c.text for c in cleaned]
-    for key in ("flag_visit_prompt", "flag_truncated", "flag_translated", "flag_leaked_date"):
+    for key in ("flag_visit_prompt", "flag_truncated", "flag_translated", "flag_leaked_date", "flag_edited_notice"):
         data[key] = [c.flags()[key] for c in cleaned]
 
     data["has_text"] = data["review_text"].notna() & data["review_text"].astype(str).str.strip().ne("")

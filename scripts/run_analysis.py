@@ -44,22 +44,24 @@ def load_reviews(path: Path) -> pd.DataFrame:
 def describe_sample(prepared: pd.DataFrame, scored: pd.DataFrame) -> dict:
     """Counts reported in Section 3.2."""
     dropped = prepared[prepared["has_text"] & ~prepared["in_scope"]]
-    visit_prompt_only = dropped["review_text"].astype(str).str.contains(
-        "Weekday|Weekend|Wait time|Reservation", regex=True
-    )
+    raw = dropped["review_text"].astype(str)
+    visit_prompt_only = raw.str.contains("Weekday|Weekend|Public holiday|Wait time|Reservation", regex=True)
+    edit_notice_only = ~visit_prompt_only & raw.str.match(r"\s*Edited\s")
     return {
         "n_reviews": int(len(prepared)),
         "n_rated": int(prepared["rating"].notna().sum()),
         "n_with_text": int(prepared["has_text"].sum()),
         "n_dropped_after_cleaning": int(len(dropped)),
         "n_dropped_visit_prompt_only": int(visit_prompt_only.sum()),
-        "n_dropped_other": int((~visit_prompt_only).sum()),
+        "n_dropped_edit_notice_only": int(edit_notice_only.sum()),
+        "n_dropped_other": int((~visit_prompt_only & ~edit_notice_only).sum()),
         "n_in_scope": int(len(scored)),
         "in_scope_by_library": scored["lib"].value_counts().reindex(config.LIBRARIES).to_dict(),
         "very_short_pct": round(float(scored["very_short"].mean() * 100), 3),
         "truncated_in_scope_by_library": scored.groupby("lib", observed=True)["flag_truncated"].sum()
         .reindex(config.LIBRARIES).to_dict(),
         "visit_prompt_in_scope": int(scored["flag_visit_prompt"].sum()),
+        "edit_notice_in_scope": int(scored["flag_edited_notice"].sum()),
     }
 
 

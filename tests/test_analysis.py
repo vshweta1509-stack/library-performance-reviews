@@ -19,6 +19,11 @@ from libperf.sentiment import polarity_label, split_sentences, vader_label
         ("Great reading room … More", "Great reading room", "truncated"),
         ("Best library ever Translated by Google ・ See original (Nepali) 1", "Best library ever", "translated"),
         ("2 years ago Nice place", "Nice place", "leaked_date"),
+        ("Weekday Wait time No wait Reservation recommended Not sure", "", "visit_prompt"),
+        ("Awesome library Public holiday", "Awesome library", "visit_prompt"),
+        ("Edited 3 years ago Great collection", "Great collection", "edited_notice"),
+        ("Edited a year ago", "", "edited_notice"),
+        ("Mumbai city center Translated by Google ・ See original (Vietnamese) 0:19 0:12", "Mumbai city center", "translated"),
     ],
 )
 def test_platform_text_is_removed_and_flagged(raw, expected_text, flag):
@@ -32,6 +37,16 @@ def test_ordinary_review_is_untouched():
     result = clean_text(raw)
     assert result.text == raw
     assert not any([result.visit_prompt, result.truncated, result.translated, result.leaked_date])
+
+
+def test_reviewer_profile_summary_is_removed():
+    assert clean_text("21 reviews · 2,698 photos").text == ""
+    assert clean_text("655 reviews · 8,811 photos Huge collection").text == "Huge collection"
+
+
+def test_edited_inside_a_sentence_is_kept():
+    raw = "I edited 3 years ago my notes here"
+    assert clean_text(raw).text == raw
 
 
 def test_open_24_hours_keeps_its_number():

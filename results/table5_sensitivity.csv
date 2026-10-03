@@ -1,0 +1,5 @@
+subset,n,max_change_vs_base,sentiment_chi2_p,NLI,CPL,ASM,DPL
+all in scope,2445,0.0,0.178,76.67,81.84,80.06,78.72
+excluding truncated,2291,1.307,0.048,76.65,83.14,79.74,78.82
+excluding visit prompts,2346,0.311,0.163,76.63,81.76,80.37,78.72
+excluding very short,2013,1.826,0.201,76.92,82.08,81.88,78.44
