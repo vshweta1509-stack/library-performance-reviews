@@ -25,6 +25,7 @@ import pandas as pd
 
 from libperf import config, figures, indicators, sentiment
 from libperf.cleaning import prepare_reviews
+from libperf.derived import dropped_reason
 from libperf.sentiment import NEGATIVE, NEUTRAL, POSITIVE
 
 
@@ -43,18 +44,16 @@ def load_reviews(path: Path) -> pd.DataFrame:
 
 def describe_sample(prepared: pd.DataFrame, scored: pd.DataFrame) -> dict:
     """Counts reported in Section 3.2."""
-    dropped = prepared[prepared["has_text"] & ~prepared["in_scope"]]
-    raw = dropped["review_text"].astype(str)
-    visit_prompt_only = raw.str.contains("Weekday|Weekend|Public holiday|Wait time|Reservation", regex=True)
-    edit_notice_only = ~visit_prompt_only & raw.str.match(r"\s*Edited\s")
+    reasons = prepared["dropped_reason"] if "dropped_reason" in prepared.columns else dropped_reason(prepared)
+    dropped = prepared["has_text"] & ~prepared["in_scope"]
     return {
         "n_reviews": int(len(prepared)),
         "n_rated": int(prepared["rating"].notna().sum()),
         "n_with_text": int(prepared["has_text"].sum()),
-        "n_dropped_after_cleaning": int(len(dropped)),
-        "n_dropped_visit_prompt_only": int(visit_prompt_only.sum()),
-        "n_dropped_edit_notice_only": int(edit_notice_only.sum()),
-        "n_dropped_other": int((~visit_prompt_only & ~edit_notice_only).sum()),
+        "n_dropped_after_cleaning": int(dropped.sum()),
+        "n_dropped_visit_prompt_only": int((reasons == "visit_prompt_only").sum()),
+        "n_dropped_edit_notice_only": int((reasons == "edit_notice_only").sum()),
+        "n_dropped_other": int((reasons == "other").sum()),
         "n_in_scope": int(len(scored)),
         "in_scope_by_library": scored["lib"].value_counts().reindex(config.LIBRARIES).to_dict(),
         "very_short_pct": round(float(scored["very_short"].mean() * 100), 3),
@@ -101,22 +100,20 @@ def table1(prepared: pd.DataFrame, scored: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows).round(3)
 
 
-def main(argv: list[str] | None = None) -> dict:
-    parser = argparse.ArgumentParser(description="Measuring library performance from Google Maps reviews")
-    parser.add_argument("--input", required=True, type=Path, help="review table (.xlsx or .csv)")
-    parser.add_argument("--output", default=Path("outputs"), type=Path, help="output directory")
-    parser.add_argument("--bootstrap-draws", default=config.BOOTSTRAP_DRAWS, type=int)
-    parser.add_argument("--seed", default=config.BOOTSTRAP_SEED, type=int)
-    parser.add_argument("--skip-classifier", action="store_true", help="skip the supervised check")
-    args = parser.parse_args(argv)
-    args.output.mkdir(parents=True, exist_ok=True)
+def analyse(
+    prepared: pd.DataFrame,
+    scored: pd.DataFrame,
+    output: Path,
+    seed: int = config.BOOTSTRAP_SEED,
+    bootstrap_draws: int = config.BOOTSTRAP_DRAWS,
+    classifier: bool = True,
+) -> dict:
+    """Compute every table, figure and statistic from cleaned (prepared) and scored reviews.
 
-    reviews = load_reviews(args.input)
-    prepared = prepare_reviews(
-        reviews, config.COLLECTION_DATE, config.LIBRARY_ORDER, config.LIBRARY_CODES, config.SHORT_REVIEW_WORDS
-    )
-    dictionary = sentiment.load_dictionary()
-    scored = sentiment.score_reviews(prepared[prepared["in_scope"]], dictionary)
+    Shared by this script (which starts from review text) and scripts/run_from_derived.py
+    (which starts from the shareable derived table and cannot run the text classifier).
+    """
+    output.mkdir(parents=True, exist_ok=True)
     rated = prepared[prepared["rating"].notna()]
 
     results: dict = {"sample": describe_sample(prepared, scored)}
@@ -125,7 +122,7 @@ def main(argv: list[str] | None = None) -> dict:
         "rating_convergence": sentiment.rating_convergence(scored),
         "spearman": indicators.spearman_with_rating(scored),
     }
-    if not args.skip_classifier:
+    if classifier:
         results["validation"]["classifier"] = sentiment.classifier_check(scored, config.CLASSIFIER_SEED)
 
     counts, sentiment_test = indicators.sentiment_by_library(scored, config.LIBRARIES)
@@ -134,7 +131,7 @@ def main(argv: list[str] | None = None) -> dict:
     results["rating_tests"] = indicators.rating_tests(rated, config.LIBRARIES)
 
     dimensions = indicators.dimension_table(
-        scored, config.LIBRARIES, config.DIMENSIONS, args.seed, args.bootstrap_draws, config.SMALL_SAMPLE
+        scored, config.LIBRARIES, config.DIMENSIONS, seed, bootstrap_draws, config.SMALL_SAMPLE
     )
     dimensions, cutoffs = indicators.add_ipa_quadrants(dimensions)
     results["ipa_cutoffs"] = cutoffs
@@ -149,11 +146,11 @@ def main(argv: list[str] | None = None) -> dict:
     }
     sensitivity = indicators.sensitivity(scored, config.LIBRARIES)
 
-    table1(prepared, scored).to_csv(args.output / "table1_sample_sentiment.csv", index=False)
-    dimensions.round(3).to_csv(args.output / "table2_dimensions_ipa.csv", index=False)
-    asymmetry.round(4).to_csv(args.output / "table3_asymmetry.csv", index=False)
-    temporal.to_csv(args.output / "table4_temporal.csv", index=False)
-    sensitivity.round(3).to_csv(args.output / "table5_sensitivity.csv", index=False)
+    table1(prepared, scored).to_csv(output / "table1_sample_sentiment.csv", index=False)
+    dimensions.round(3).to_csv(output / "table2_dimensions_ipa.csv", index=False)
+    asymmetry.round(4).to_csv(output / "table3_asymmetry.csv", index=False)
+    temporal.to_csv(output / "table4_temporal.csv", index=False)
+    sensitivity.round(3).to_csv(output / "table5_sensitivity.csv", index=False)
 
     keep = [
         "review_id", "library", "lib", "rating", "date", "date_exact", "year", "text", "n_words",
@@ -161,14 +158,33 @@ def main(argv: list[str] | None = None) -> dict:
         "tb_polarity", "tb", "vader_compound", "vader", "n_dimensions",
     ] + [f"{prefix}_{d}" for d in config.DIMENSIONS for prefix in ("mentions", "sentiment", "vader")]
     scored[[column for column in keep if column in scored.columns]].to_csv(
-        args.output / "scored_reviews.csv", index=False
+        output / "scored_reviews.csv", index=False
     )
 
-    figures.ipa_figure(dimensions, cutoffs, config.LIBRARY_NAMES, args.output / "figure1_ipa.png")
-    figures.temporal_figure(rated, config.LIBRARIES, config.LIBRARY_NAMES, args.output / "figure2_temporal.png")
+    figures.ipa_figure(dimensions, cutoffs, config.LIBRARY_NAMES, output / "figure1_ipa.png")
+    figures.temporal_figure(rated, config.LIBRARIES, config.LIBRARY_NAMES, output / "figure2_temporal.png")
 
-    with open(args.output / "results.json", "w", encoding="utf-8") as handle:
+    with open(output / "results.json", "w", encoding="utf-8") as handle:
         json.dump(results, handle, indent=1, default=str)
+    return results
+
+
+def main(argv: list[str] | None = None) -> dict:
+    parser = argparse.ArgumentParser(description="Measuring library performance from Google Maps reviews")
+    parser.add_argument("--input", required=True, type=Path, help="review table (.xlsx or .csv)")
+    parser.add_argument("--output", default=Path("outputs"), type=Path, help="output directory")
+    parser.add_argument("--bootstrap-draws", default=config.BOOTSTRAP_DRAWS, type=int)
+    parser.add_argument("--seed", default=config.BOOTSTRAP_SEED, type=int)
+    parser.add_argument("--skip-classifier", action="store_true", help="skip the supervised check")
+    args = parser.parse_args(argv)
+
+    reviews = load_reviews(args.input)
+    prepared = prepare_reviews(
+        reviews, config.COLLECTION_DATE, config.LIBRARY_ORDER, config.LIBRARY_CODES, config.SHORT_REVIEW_WORDS
+    )
+    dictionary = sentiment.load_dictionary()
+    scored = sentiment.score_reviews(prepared[prepared["in_scope"]], dictionary)
+    results = analyse(prepared, scored, args.output, args.seed, args.bootstrap_draws, not args.skip_classifier)
     print(f"Analysed {results['sample']['n_in_scope']} text reviews; results written to {args.output}")
     return results
 

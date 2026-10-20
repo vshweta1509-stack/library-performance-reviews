@@ -1,8 +1,12 @@
 """Check that this code reproduces the values published in the paper.
 
-Run after scripts/run_analysis.py on the study data:
+Run after scripts/run_analysis.py on the study data, or after scripts/run_from_derived.py on
+the shareable derived dataset:
 
     python -m scripts.verify_paper --output outputs
+
+The five values that come from a text classifier cannot be computed from the derived dataset;
+they are reported as not checked rather than as failures.
 
 Every published number is listed below with the tolerance used to compare it. The script
 exits with status 1 if any check fails, so it can be used in continuous integration.
@@ -168,9 +172,9 @@ def collect_human(output: Path) -> dict:
         "VADER accuracy %": s["vader"]["accuracy_pct"],
         "VADER kappa": s["vader"]["kappa"],
         "VADER macro-F1": s["vader"]["f1_macro"],
-        "classifier vs gold accuracy %": s["classifier"]["accuracy_pct"],
-        "classifier vs gold kappa": s["classifier"]["kappa"],
-        "classifier vs gold macro-F1": s["classifier"]["f1_macro"],
+        "classifier vs gold accuracy %": s.get("classifier", {}).get("accuracy_pct"),
+        "classifier vs gold kappa": s.get("classifier", {}).get("kappa"),
+        "classifier vs gold macro-F1": s.get("classifier", {}).get("f1_macro"),
         "aspect validation reviews": human["aspects"]["n_in_scope"],
         "AS kappa": a["AS"]["kappa"],
         "AS precision": a["AS"]["precision"],
@@ -226,8 +230,8 @@ def collect(output: Path) -> dict:
         "rating convergence C": validation["rating_convergence"]["C"],
         "Spearman TextBlob": validation["spearman"]["textblob_rho"],
         "Spearman VADER": validation["spearman"]["vader_rho"],
-        "classifier accuracy %": validation["classifier"]["accuracy_pct"],
-        "classifier negative F1": validation["classifier"]["f1_negative"],
+        "classifier accuracy %": validation.get("classifier", {}).get("accuracy_pct"),
+        "classifier negative F1": validation.get("classifier", {}).get("f1_negative"),
         "positive % overall": table1.loc["All", "positive_pct"],
         "neutral % overall": table1.loc["All", "neutral_pct"],
         "negative % overall": table1.loc["All", "negative_pct"],
@@ -306,12 +310,17 @@ def main(argv: list[str] | None = None) -> int:
         expected.update(PUBLISHED_HUMAN)
     else:
         print("validation_human.json not found: human-validation values not checked")
-    failures = []
+    failures, not_checked = [], [name for name in expected if computed.get(name) is None]
     for name, (published, tolerance) in expected.items():
+        if name in not_checked:
+            continue
         value = float(computed[name])
         if abs(value - published) > tolerance:
             failures.append(f"{name}: paper {published}, computed {value}")
-    print(f"{len(expected) - len(failures)} of {len(expected)} published values reproduced")
+    checked = len(expected) - len(not_checked)
+    print(f"{checked - len(failures)} of {checked} published values reproduced")
+    if not_checked:
+        print(f"{len(not_checked)} value(s) need review text and were not checked: {', '.join(not_checked)}")
     for failure in failures:
         print("  MISMATCH", failure)
     return 1 if failures else 0

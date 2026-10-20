@@ -6,3 +6,5 @@ outputs/
 outputs_demo/
 *.xlsx
 !data/*.xlsx
+outputs_derived/
+*PRIVATE*

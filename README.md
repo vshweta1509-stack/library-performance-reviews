@@ -18,6 +18,10 @@ statistic, p-value and indicator, plus 29 human-validation values when the codin
 supplied (116 in all). On the study data all 116 reproduce, and all 80 cells of Table 2 match the
 published table.
 
+Anyone can check 111 of the 116 without the review text, using the derived dataset in
+`data/derived/` (see **Reproducing the analysis without the review text** below). The other five
+come from a text classifier and need the text itself.
+
 ## Installation
 
 Python 3.11 or newer.
@@ -52,6 +56,20 @@ below); it can be skipped, in which case only the 87 values that do not depend o
 are checked. The last command prints how many of the published values were reproduced and exits
 non-zero if any differ.
 
+## Reproducing the analysis without the review text
+
+`data/derived/` holds everything the analysis needs except the text (see **Data** below):
+
+```bash
+python -m scripts.run_from_derived --output outputs_derived
+python -m scripts.verify_paper --output outputs_derived
+```
+
+The first command rebuilds every table, the figure, `results.json` and `validation_human.json`
+from `reviews_derived.csv` and the two human-coding files. The second reports
+`111 of 111 published values reproduced` and lists the five classifier values it could not check.
+The tables are byte-for-byte identical to those produced from the full text.
+
 ## Input format
 
 A `.xlsx` or `.csv` table, one row per review.
@@ -80,6 +98,9 @@ A `.xlsx` or `.csv` table, one row per review.
 | `validation_human.json` | Agreement with human coding (written by `scripts/validate_human.py`) |
 | `figure1_ipa.png` | Figure 1 |
 | `figure2_temporal.png` | Supporting figure: mean annual rating |
+
+`scripts/run_from_derived.py` writes the same files, except that `scored_reviews.csv` has no text
+column and the classifier results are absent.
 
 Figures are regenerated at run time and may differ from the published file in font rendering; the
 underlying values are identical.
@@ -121,15 +142,41 @@ chi-square tests on 2×2 temporal tables use Yates' continuity correction (SciPy
 pip install -r requirements-dev.txt && pytest -q
 ```
 
-30 tests cover the cleaning rules, date estimation, label thresholds, each indicator formula,
-quadrant assignment, bootstrap reproducibility, input validation and an end-to-end run.
+32 tests cover the cleaning rules, date estimation, label thresholds, each indicator formula,
+quadrant assignment, bootstrap reproducibility, input validation, an end-to-end run, and the
+derived dataset (that it holds no text or platform identifiers, and that it reproduces the
+text-based run exactly).
 
 ## Data
 
-The review data are not included. Google Maps reviews are public but are written by identifiable
-people, so the analysed file is available from the author on reasonable request rather than being
-redistributed here. Reviewer names are discarded before analysis, and no personal data are used.
-Aggregate results for the published study are in `results/`.
+The reviews were collected on 23–25 August 2026 from the public Google Maps pages of the four
+libraries, without logging in: National Library of India with the Apify Google Maps Reviews
+Scraper, the other three with a custom browser-automation scraper. Only content visible to any
+visitor was collected, for non-commercial academic research.
+
+What is and is not shared:
+
+| Data | Shared? | Where |
+| --- | --- | --- |
+| Raw scrape (reviewer names, review text, Google review ids, timestamps) | No | Held by the corresponding author |
+| Cleaned review text | No; available to bona fide researchers on request for verification, without reviewer names | Corresponding author |
+| Derived per-review variables (no text, names or platform ids) | Yes | `data/derived/reviews_derived.csv` |
+| Human sentiment and aspect coding, keyed by study id | Yes | `data/derived/sentiment_codes.csv`, `aspect_codes.csv` |
+| Aspect dictionary | Yes | `data/aspect_dictionary.json` |
+| Coding rules for the human coders | Yes | Supplementary material of the article (Tables S2, S3) |
+| Aggregate results (every table and statistic) | Yes | `results/` |
+| Synthetic demonstration data | Yes | `data/sample_reviews.csv` |
+
+Why the text is withheld: the reviews are written by identifiable people, who posted them to
+Google Maps rather than to a research archive, and any verbatim sentence can be searched to find
+the reviewer's name and profile. Google's terms of service also do not permit the bulk
+redistribution of content taken from its services. The derived table replaces Google's review id
+with a study id (R00001 …), keeps only the year of each review, and contains no free text. The key
+linking study ids to Google review ids is kept privately by the authors. `data/derived/CODEBOOK.md`
+describes every variable.
+
+The derived files were produced from the full table with
+`python -m scripts.export_derived --input four_libraries_combined.xlsx --sentiment-codes sentiment_codes.csv --aspect-codes aspect_codes.csv`.
 
 ## Human validation
 
@@ -146,18 +193,25 @@ Aggregate results for the published study are in `results/`.
   The script reports κ, precision, recall and F1 for dictionary assignment and tone
   agreement where both identify a dimension.
 
-Input files (`sentiment_codes.csv`: `review_id, coder_A, coder_B, gold`; `aspect_codes.csv`:
-`review_id, AS, IC, LP, DF`) are available from the authors on request with the review data.
+The coding files (`sentiment_codes.csv`: `code_id, review_id, coder_A, coder_B, gold`;
+`aspect_codes.csv`: `code_id, review_id, AS, IC, LP, DF`) are in `data/derived/`, keyed by study
+id. `scripts/validate_human.py` takes the same files keyed by Google review id, as the authors
+used them with the full text.
 
 ## Changes
 
+- **1.2.0** Added the shareable derived dataset (`data/derived/`: per-review derived variables,
+  human coding keyed by study id, codebook), `scripts/export_derived.py`,
+  `scripts/run_from_derived.py` and `libperf/derived.py`; `scripts/verify_paper.py` now reports
+  values it cannot check instead of failing on them. `scripts/run_analysis.py` now exposes the
+  analysis as `analyse()`. No result changes. Two tests added.
 - **1.1.0** Cleaning now also removes "Public holiday" visit prompts, "Reservation recommended: Not
   sure" (previously left as "t sure"), "Edited N years ago" notices, reviewer profile summaries and
   translation notices followed by video timestamps; 45 reviews that contained only such text are no
   longer analysed (2,445 rather than 2,490). Platform-text-only reviews in the validation samples were
   replaced by random draws and coded by the same coders. Added `scripts/validate_human.py` and the
   human-validation checks in `scripts/verify_paper.py`.
-- **1.0.1** Same code as 1.0.0, re-released so that Zenodo would archive it and issue a DOI.
+- **1.0.1** Same code as 1.0.0; tagged on GitHub only (Zenodo archived 1.0.0).
 - **1.0.0** First release.
 
 ## Citation
@@ -166,8 +220,8 @@ See `CITATION.cff`. Please cite the paper and, if you use the code, this reposit
 
 ## Use of generative AI
 
-Claude (Anthropic; model Claude Opus 5) was used to write the code in this repository and to draft
-the manuscript. The authors reviewed the code and results and are responsible for them.
+A generative AI tool was used to write the code in this repository and to draft the manuscript.
+The authors reviewed the code and results and are responsible for them.
 
 ## Licence
 

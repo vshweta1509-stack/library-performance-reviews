@@ -1,0 +1,206 @@
+code_id,review_id,AS,IC,LP,DF
+A001,R02814,Not mentioned,Not mentioned,Positive,Not mentioned
+A002,R01683,Not mentioned,Not mentioned,Negative,Not mentioned
+A003,R00354,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A004,R00581,Not mentioned,Not mentioned,Positive,Not mentioned
+A005,R03752,Negative,Not mentioned,Positive,Not mentioned
+A006,R01573,Not mentioned,Not mentioned,Positive,Not mentioned
+A007,R01759,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A008,R02431,Positive,Not mentioned,Positive,Not mentioned
+A009,R02926,Positive,Not mentioned,Not mentioned,Not mentioned
+A010,R03298,Not mentioned,Positive,Positive,Positive
+A011,R02002,Not mentioned,Positive,Positive,Not mentioned
+A012,R03156,Not mentioned,Not mentioned,Positive,Not mentioned
+A013,R02202,Not mentioned,Not mentioned,Positive,Not mentioned
+A014,R02738,Not mentioned,Not mentioned,Not mentioned,Positive
+A015,R03758,Negative,Negative,Negative,Positive
+A016,R05388,Not mentioned,Not mentioned,Positive,Not mentioned
+A017,R00357,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A018,R02407,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A019,R03572,Not mentioned,Positive,Positive,Mixed
+A020,R01243,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A021,R04365,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A022,R01820,Negative,Negative,Mixed,Negative
+A023,R01739,Not mentioned,Not mentioned,Positive,Not mentioned
+A024,R02460,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A025,R04659,Not mentioned,Not mentioned,Positive,Positive
+A026,R05251,Not mentioned,Not mentioned,Positive,Not mentioned
+A027,R01904,Negative,Negative,Negative,Not mentioned
+A028,R04961,Not mentioned,Not mentioned,Positive,Not mentioned
+A029,R02112,Not mentioned,Positive,Positive,Not mentioned
+A030,R03496,Not mentioned,Not mentioned,Positive,Positive
+A031,R03312,Not mentioned,Not mentioned,Positive,Positive
+A032,R01735,Positive,Not mentioned,Positive,Positive
+A033,R03942,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A034,R02841,Not mentioned,Not mentioned,Neutral,Not mentioned
+A035,R02219,Not mentioned,Positive,Positive,Not mentioned
+A036,R02943,Not mentioned,Not mentioned,Not mentioned,Positive
+A037,R01634,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A038,R04353,Not mentioned,Not mentioned,Positive,Not mentioned
+A039,R03283,Not mentioned,Not mentioned,Positive,Positive
+A040,R01848,Mixed,Positive,Positive,Not mentioned
+A041,R02159,Not mentioned,Not mentioned,Positive,Not mentioned
+A042,R02067,Not mentioned,Not mentioned,Positive,Positive
+A043,R02508,Not mentioned,Not mentioned,Neutral,Positive
+A044,R02037,Not mentioned,Not mentioned,Positive,Not mentioned
+A045,R00104,Not mentioned,Not mentioned,Positive,Positive
+A046,R00471,Not mentioned,Not mentioned,Positive,Not mentioned
+A047,R01121,Not mentioned,Not mentioned,Positive,Not mentioned
+A048,R03958,Not mentioned,Not mentioned,Positive,Not mentioned
+A049,R00819,Not mentioned,Negative,Not mentioned,Not mentioned
+A050,R04391,Not mentioned,Not mentioned,Not mentioned,Mixed
+A051,R00699,Not mentioned,Not mentioned,Positive,Positive
+A052,R01465,Not mentioned,Not mentioned,Neutral,Not mentioned
+A053,R02069,Not mentioned,Not mentioned,Neutral,Not mentioned
+A054,R02781,Not mentioned,Not mentioned,Positive,Not mentioned
+A055,R01947,Not mentioned,Not mentioned,Positive,Not mentioned
+A056,R00706,Positive,Not mentioned,Positive,Positive
+A057,R01176,Not mentioned,Not mentioned,Positive,Positive
+A058,R01777,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A059,R02006,Positive,Not mentioned,Positive,Not mentioned
+A060,R03268,Not mentioned,Not mentioned,Positive,Not mentioned
+A061,R02741,Not mentioned,Not mentioned,Positive,Not mentioned
+A062,R02921,Not mentioned,Positive,Positive,Positive
+A063,R02168,Not mentioned,Not mentioned,Positive,Not mentioned
+A064,R02222,Not mentioned,Not mentioned,Positive,Positive
+A065,R00752,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A066,R03431,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A067,R04500,Negative,Not mentioned,Positive,Mixed
+A068,R02665,Not mentioned,Not mentioned,Positive,Not mentioned
+A069,R03860,Not mentioned,Not mentioned,Positive,Not mentioned
+A070,R01622,Not mentioned,Not mentioned,Positive,Not mentioned
+A071,R02772,Not mentioned,Not mentioned,Positive,Not mentioned
+A072,R01930,Not mentioned,Not mentioned,Positive,Not mentioned
+A073,R03106,Not mentioned,Positive,Positive,Positive
+A074,R00303,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A075,R01785,Negative,Not mentioned,Not mentioned,Not mentioned
+A076,R02225,Positive,Not mentioned,Positive,Positive
+A077,R02339,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A078,R00251,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A079,R01584,Not mentioned,Not mentioned,Positive,Positive
+A080,R00525,Not mentioned,Mixed,Mixed,Not mentioned
+A081,R04601,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A082,R04862,Not mentioned,Positive,Positive,Positive
+A083,R03565,Not mentioned,Not mentioned,Positive,Not mentioned
+A084,R03762,Negative,Negative,Negative,Not mentioned
+A085,R02504,Positive,Positive,Positive,Not mentioned
+A086,R02302,Not mentioned,Not mentioned,Positive,Not mentioned
+A087,R00234,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A088,R01709,Not mentioned,Not mentioned,Positive,Not mentioned
+A089,R00052,Not mentioned,Not mentioned,Positive,Not mentioned
+A090,R03368,Not mentioned,Not mentioned,Positive,Positive
+A091,R04844,Not mentioned,Not mentioned,Not mentioned,Positive
+A092,R02851,Not mentioned,Positive,Positive,Positive
+A093,R01489,Not mentioned,Neutral,Neutral,Negative
+A094,R02269,Not mentioned,Not mentioned,Positive,Positive
+A095,R04784,Not mentioned,Positive,Positive,Positive
+A096,R03777,Positive,Not mentioned,Positive,Positive
+A097,R02277,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A098,R04609,Not mentioned,Positive,Positive,Positive
+A099,R01878,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A100,R00898,Not mentioned,Not mentioned,Positive,Not mentioned
+A101,R01955,Negative,Negative,Negative,Not mentioned
+A102,R03114,Not mentioned,Not mentioned,Positive,Not mentioned
+A103,R01701,Not mentioned,Not mentioned,Positive,Not mentioned
+A104,R03505,Not mentioned,Positive,Positive,Positive
+A105,R01151,Not mentioned,Not mentioned,Positive,Not mentioned
+A106,R00165,Positive,Not mentioned,Positive,Positive
+A107,R01520,Not mentioned,Not mentioned,Not mentioned,Mixed
+A108,R02448,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A109,R02299,Not mentioned,Not mentioned,Neutral,Not mentioned
+A110,R05205,Not mentioned,Not mentioned,Positive,Not mentioned
+A111,R01636,Not mentioned,Not mentioned,Positive,Not mentioned
+A112,R02794,Not mentioned,Not mentioned,Positive,Not mentioned
+A113,R02515,Not mentioned,Not mentioned,Positive,Not mentioned
+A114,R03936,Not mentioned,Not mentioned,Positive,Not mentioned
+A115,R00309,Not mentioned,Not mentioned,Not mentioned,Positive
+A116,R05023,Not mentioned,Not mentioned,Positive,Positive
+A117,R00162,Not mentioned,Neutral,Positive,Not mentioned
+A118,R03451,Not mentioned,Not mentioned,Positive,Not mentioned
+A119,R03188,Positive,Positive,Positive,Not mentioned
+A120,R00671,Not mentioned,Positive,Not mentioned,Not mentioned
+A121,R02342,Positive,Not mentioned,Positive,Positive
+A122,R00070,Not mentioned,Positive,Positive,Positive
+A123,R00108,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A124,R04429,Not mentioned,Positive,Positive,Positive
+A125,R01976,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A126,R02391,Not mentioned,Positive,Positive,Mixed
+A127,R01309,Not mentioned,Not mentioned,Positive,Positive
+A128,R02231,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A129,R02183,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A130,R05231,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A131,R00448,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A132,R00912,Not mentioned,Not mentioned,Positive,Positive
+A133,R01411,Not mentioned,Not mentioned,Positive,Not mentioned
+A134,R01651,Not mentioned,Not mentioned,Positive,Not mentioned
+A135,R01625,Positive,Not mentioned,Not mentioned,Not mentioned
+A136,R00200,Not mentioned,Not mentioned,Positive,Positive
+A137,R04175,Negative,Negative,Neutral,Not mentioned
+A138,R01981,Not mentioned,Not mentioned,Neutral,Not mentioned
+A139,R04845,Not mentioned,Not mentioned,Positive,Not mentioned
+A140,R03082,Positive,Positive,Positive,Mixed
+A141,R01444,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A142,R02149,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A143,R00390,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A144,R02098,Not mentioned,Not mentioned,Positive,Not mentioned
+A145,R04274,Negative,Negative,Neutral,Not mentioned
+A146,R03804,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A147,R01761,Not mentioned,Positive,Positive,Not mentioned
+A148,R05141,Not mentioned,Not mentioned,Positive,Positive
+A149,R01753,Positive,Not mentioned,Positive,Not mentioned
+A150,R03745,Not mentioned,Mixed,Mixed,Mixed
+A151,R05180,Not mentioned,Not mentioned,Not mentioned,Positive
+A152,R02648,Not mentioned,Not mentioned,Positive,Not mentioned
+A153,R00935,Not mentioned,Not mentioned,Positive,Positive
+A154,R00458,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A155,R05292,Not mentioned,Not mentioned,Positive,Not mentioned
+A156,R02376,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A157,R03832,Not mentioned,Not mentioned,Not mentioned,Positive
+A158,R02441,Not mentioned,Positive,Positive,Not mentioned
+A159,R02196,Not mentioned,Not mentioned,Positive,Not mentioned
+A160,R02057,Not mentioned,Negative,Positive,Not mentioned
+A161,R00612,Not mentioned,Not mentioned,Positive,Not mentioned
+A162,R02479,Positive,Positive,Positive,Positive
+A163,R04290,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A164,R02435,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A165,R01935,Not mentioned,Not mentioned,Negative,Not mentioned
+A166,R00727,Not mentioned,Not mentioned,Positive,Positive
+A167,R00680,Not mentioned,Not mentioned,Positive,Not mentioned
+A168,R03619,Positive,Positive,Positive,Not mentioned
+A169,R00783,Not mentioned,Negative,Not mentioned,Not mentioned
+A170,R01814,Mixed,Not mentioned,Positive,Not mentioned
+A171,R05355,Not mentioned,Not mentioned,Mixed,Positive
+A172,R02425,Not mentioned,Not mentioned,Positive,Not mentioned
+A173,R03319,Not mentioned,Not mentioned,Positive,Not mentioned
+A174,R00292,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A175,R01501,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A176,R00284,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A177,R03383,Not mentioned,Not mentioned,Positive,Not mentioned
+A178,R03355,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A179,R00323,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A180,R03795,Not mentioned,Positive,Positive,Not mentioned
+A181,R01959,Positive,Not mentioned,Positive,Not mentioned
+A182,R01948,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A183,R03656,Not mentioned,Positive,Positive,Not mentioned
+A184,R03126,Not mentioned,Mixed,Mixed,Positive
+A185,R04099,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A186,R01747,Not mentioned,Not mentioned,Positive,Not mentioned
+A187,R00377,Not mentioned,Not mentioned,Positive,Not mentioned
+A188,R01817,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A189,R03331,Not mentioned,Not mentioned,Positive,Positive
+A190,R02458,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A191,R01068,Not mentioned,Not mentioned,Not mentioned,Positive
+A192,R01749,Not mentioned,Not mentioned,Not mentioned,Not mentioned
+A193,R04474,Negative,Not mentioned,Not mentioned,Not mentioned
+A194,R02473,Not mentioned,Not mentioned,Positive,Positive
+A195,R01653,Not mentioned,Not mentioned,Positive,Positive
+A196,R04213,Not mentioned,Positive,Positive,Not mentioned
+A197,R02583,Not mentioned,Not mentioned,Positive,Not mentioned
+A198,R01554,Not mentioned,Not mentioned,Positive,Positive
+A199,R04831,Positive,Positive,Positive,Not mentioned
+A200,R05337,Positive,Positive,Positive,Positive
+A201,R00308,Not mentioned,Not mentioned,Positive,Mixed
+A202,R01211,Not mentioned,Not mentioned,Mixed,Positive
+A203,R01236,Not mentioned,Not mentioned,Positive,Positive
+A204,R01332,Not mentioned,Not mentioned,Positive,Not mentioned
+A205,R01484,Not mentioned,Not mentioned,Positive,Not mentioned

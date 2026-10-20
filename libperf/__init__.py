@@ -6,5 +6,6 @@ Modules:
     sentiment   review-level and sentence-level sentiment, validation
     indicators  performance indicators, IPA and statistical tests
     figures     the published figures
+    derived     the shareable derived dataset (no review text)
 """
-__version__ = "1.0.0"
+__version__ = "1.2.0"

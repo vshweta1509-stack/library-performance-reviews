@@ -208,3 +208,46 @@ def test_missing_column_is_rejected(tmp_path):
     pd.DataFrame({"library": ["National Library"], "rating": [5]}).to_csv(path, index=False)
     with pytest.raises(ValueError, match="missing required column"):
         load_reviews(path)
+
+
+# ---------------------------------------------------------------- derived dataset
+def _sample_frames(tmp_path):
+    from scripts.make_sample_data import build
+    from libperf import sentiment
+    from libperf.cleaning import prepare_reviews
+
+    raw = build(120, seed=1)
+    raw["review_id"] = [f"g{i}" for i in range(len(raw))]
+    prepared = prepare_reviews(raw, config.COLLECTION_DATE, config.LIBRARY_ORDER, config.LIBRARY_CODES)
+    scored = sentiment.score_reviews(prepared[prepared["in_scope"]], sentiment.load_dictionary())
+    return prepared, scored
+
+
+def test_derived_dataset_holds_no_text_or_platform_ids(tmp_path):
+    from libperf.derived import WITHHELD_COLUMNS, build_derived
+
+    prepared, scored = _sample_frames(tmp_path)
+    table, key = build_derived(prepared, scored)
+    assert not WITHHELD_COLUMNS & set(table.columns)
+    assert table["review_id"].str.fullmatch(r"R\d{5}").all()
+    assert not set(key) & set(table["review_id"])
+    path = tmp_path / "derived.csv"
+    table.to_csv(path, index=False)
+    content = path.read_text()
+    assert not any(text in content for text in scored["text"] if len(text) > 15)
+
+
+def test_derived_dataset_reproduces_the_text_pipeline(tmp_path):
+    from libperf.derived import build_derived, load_derived
+    from scripts.run_analysis import analyse
+
+    prepared, scored = _sample_frames(tmp_path)
+    direct = analyse(prepared, scored, tmp_path / "direct", bootstrap_draws=50, classifier=False)
+    table, _ = build_derived(prepared, scored)
+    table.to_csv(tmp_path / "derived.csv", index=False)
+    prepared2, scored2 = load_derived(tmp_path / "derived.csv")
+    rebuilt = analyse(prepared2, scored2, tmp_path / "rebuilt", bootstrap_draws=50, classifier=False)
+    import json
+    assert json.dumps(direct, default=str) == json.dumps(rebuilt, default=str)  # NaN-safe
+    for name in ["table1_sample_sentiment.csv", "table2_dimensions_ipa.csv", "table4_temporal.csv"]:
+        assert (tmp_path / "direct" / name).read_text() == (tmp_path / "rebuilt" / name).read_text()

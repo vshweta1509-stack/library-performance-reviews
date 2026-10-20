@@ -72,11 +72,11 @@ def sentiment_validation(scored: pd.DataFrame, codes: pd.DataFrame, random_state
     for column in ("coder_A", "coder_B", "gold"):
         in_scope[column] = _norm(in_scope[column])
     for column in ("text", "tb", "vader"):
-        in_scope[column] = lookup.loc[in_scope["review_id"], column].to_numpy()
+        if column in lookup.columns:
+            in_scope[column] = lookup.loc[in_scope["review_id"], column].to_numpy()
 
     both = in_scope[in_scope["coder_A"].isin(LABELS) & in_scope["coder_B"].isin(LABELS)]
-    classifier = retrained_classifier(scored, in_scope, random_state)
-    return {
+    result = {
         "n_sampled": int(len(codes)),
         "n_in_scope": int(len(in_scope)),
         "gold_counts": in_scope["gold"].value_counts().reindex(LABELS, fill_value=0).to_dict(),
@@ -87,8 +87,11 @@ def sentiment_validation(scored: pd.DataFrame, codes: pd.DataFrame, random_state
         },
         "textblob": compare(in_scope["gold"], in_scope["tb"]),
         "vader": compare(in_scope["gold"], in_scope["vader"]),
-        "classifier": {**compare(in_scope["gold"], classifier), "n_train": classifier.attrs["n_train"]},
     }
+    if "text" in scored.columns:  # the derived dataset has no text, so no classifier
+        classifier = retrained_classifier(scored, in_scope, random_state)
+        result["classifier"] = {**compare(in_scope["gold"], classifier), "n_train": classifier.attrs["n_train"]}
+    return result
 
 
 def aspect_validation(scored: pd.DataFrame, codes: pd.DataFrame) -> dict:

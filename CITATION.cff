@@ -27,8 +27,8 @@ authors:
     given-names: Shilpi
     orcid: "https://orcid.org/0000-0003-3638-5304"
     affiliation: "Department of Library and Information Science, Babasaheb Bhimrao Ambedkar University, Lucknow, India"
-version: 1.1.0
-date-released: 2026-10-02
+version: 1.2.0
+date-released: 2026-10-18
 license: MIT
 repository-code: "https://github.com/vshweta1509-stack/library-performance-reviews"
 doi: "10.5281/zenodo.22996234"
